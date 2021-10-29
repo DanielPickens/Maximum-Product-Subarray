@@ -5,7 +5,7 @@
 
 
 var maxProduct = (nums) => {
-  let maxPos = 0;   // setting local and global variables to num[0], and 0
+  let maxPos = 0;   
         let maxNeg = 0;
         let toRet = nums[0];
         
@@ -41,3 +41,20 @@ Details
 Runtime: 72 ms, faster than 93.03% of JavaScript online submissions for Maximum Product Subarray.
 Memory Usage: 40.8 MB, less than 12.88% of JavaScript online submissions for Maximum Product Subarray.
 */
+
+
+
+
+//solution 2: Kadane's Algo:
+
+const maxProduct = (nums) => {
+  
+  let globalMax = (localMin = localMax = nums[0]);  //
+  for (let i = 1; i < nums.length; i++) {   // We start at the index 1 since the localMax, localMin nums[0]
+    let localMinTemp = localMin;   //Kadane start
+    localMin = Math.min(nums[i], localMin * nums[i], localMax * nums[i]);
+    localMax = Math.max(nums[i], localMinTemp * nums[i], localMax * nums[i]);
+    globalMax = Math.max(globalMax, localMax);
+  }
+  return globalMax;
+};
