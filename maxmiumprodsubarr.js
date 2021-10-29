@@ -45,7 +45,10 @@ Memory Usage: 40.8 MB, less than 12.88% of JavaScript online submissions for Max
 
 
 
-//solution 2: Kadane's Algo:
+//Solution 2: Kadane's Algo
+
+//Time complexity: O(n)
+//Space complexity: O(1)
 
 const maxProduct = (nums) => {
   
