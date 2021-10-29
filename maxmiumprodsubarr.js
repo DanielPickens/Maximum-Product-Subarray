@@ -9,7 +9,7 @@ var maxProduct = (nums) => {
         let maxNeg = 0;
         let toRet = nums[0];
         
-        for(let i of nums){  // We keep a temp variable because we want to keep track of the toRet before any calculations
+        for(let i of nums){ 
             if(i == 0){
                 toRet = Math.max(toRet, 0);
                 maxPos = 0; maxNeg = 0;
