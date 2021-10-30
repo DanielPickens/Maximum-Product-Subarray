@@ -52,8 +52,8 @@ Memory Usage: 40.8 MB, less than 12.88% of JavaScript online submissions for Max
 
 const maxProduct = (nums) => {
   
-  let globalMax = (localMin = localMax = nums[0]);  //Ins
-  for (let i = 1; i < nums.length; i++) {   // We start at the index 1 since the localMax, localMin nums[0], and on every iteration of i, we reset the localMax to 1
+  let globalMax = (localMin = localMax = nums[0]);  
+  for (let i = 1; i < nums.length; i++) {   // On every iteration of i, we reset the localMax to 1
     let localMinTemp = localMin;   //Kadane start
     localMin = Math.min(nums[i], localMin * nums[i], localMax * nums[i]);
     localMax = Math.max(nums[i], localMinTemp * nums[i], localMax * nums[i]);
